@@ -5,9 +5,9 @@ import os
 from azure.cognitiveservices.language.textanalytics import TextAnalyticsClient
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "bc20ced3c3014badbf34d1799e28f2a2"
+SUBSCRIPTION_KEY_ENV_NAME = "e0a4ec68847644849409dce0a433d785"
 TEXTANALYTICS_LOCATION = os.environ.get(
-    "https://text-analysis-smartg.cognitiveservices.azure.com/", "westus2")
+    "https://glasses.cognitiveservices.azure.com/", "westus2")
 
 
 def language_extraction(subscription_key):
