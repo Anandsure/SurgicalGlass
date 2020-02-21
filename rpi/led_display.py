@@ -42,7 +42,7 @@ while True:
     disp.display()
     time.sleep(2)
 
-    if disp.height == 64:
+    '''if disp.height == 64:
         image = Image.open('img1.png').convert('1')
     else:
         image = Image.open('img1.png').convert('1')
@@ -67,4 +67,4 @@ while True:
 
     disp.image(image)
     disp.display()
-    time.sleep(2)
+    time.sleep(2)'''
