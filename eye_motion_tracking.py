@@ -26,9 +26,9 @@ while True:
         cv2.line(roi, (x + int(w/2), 0), (x + int(w/2), rows), (0, 255, 0), 2)
         cv2.line(roi, (0, y + int(h/2)), (cols, y + int(h/2)), (0, 255, 0), 2)
         print(x,y,w,h)
-        if y < 225:
+        if y < 225 or x < 300:
             print('Looking left')
-        elif y > 245:
+        elif y > 245 or x > 480:
             print('Looking Right')
         else:
             print('Looking Straight')

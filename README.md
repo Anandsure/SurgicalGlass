@@ -13,11 +13,11 @@ Gear to make Surgical Masks smarter helping save several lives.
 4. Display summary of important things spoken throughout the operation.
 
 ### How to run it
-``
+```
 1) git clone https://github.com/AnandSure/SurgicalGlass
 2) cd SurgicalGlas
 3) python3 <file-name>.py
-``
+```
 
 ### Its advantage
 Thousands of lives are lost every year because of time wasted during surgeries. We believe every second counts and hence help save this time.
