@@ -29,7 +29,7 @@ font = ImageFont.load_default()
 while True:
     [keys,ent] = m.get_text()
     phrases = keys[1]
-    print(phrases)
+    print('key phrases: ', phrases)
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
     # Write two lines of text.

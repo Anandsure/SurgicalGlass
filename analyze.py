@@ -85,8 +85,8 @@ def entity_extraction(subscription_key,text):
         response = text_analytics.entities(documents=documents)
 
         for document in response.documents:
-            print("Document Id: ", document.id)
-            print("\tKey Entities:")
+            #print("Document Id: ", document.id)
+            #print("\tKey Entities:")
             #return document.entities 
             for entity in document.entities:
                 print("\t\t", "NAME: ", entity.name, "\tType: ",
