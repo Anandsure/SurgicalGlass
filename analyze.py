@@ -9,37 +9,7 @@ SUBSCRIPTION_KEY_ENV_NAME = "e0a4ec68847644849409dce0a433d785"
 TEXTANALYTICS_LOCATION = os.environ.get(
     "https://glasses.cognitiveservices.azure.com/", "westus2")
 
-
-def language_extraction(subscription_key):
-    """Language extraction.
-    This example detects the language of several strings. 
-    """
-    credentials = CognitiveServicesCredentials(subscription_key)
-    text_analytics_url = "https://{}.api.cognitive.microsoft.com".format(
-        TEXTANALYTICS_LOCATION)
-    text_analytics = TextAnalyticsClient(
-        endpoint=text_analytics_url, credentials=credentials)
-
-    try:
-        documents = [
-            {'id': '1', 'text': 'This is a document written in English.'},
-            {'id': '2', 'text': 'Este es un document escrito en Español.'},
-            {'id': '3', 'text': '这是一个用中文写的文件'}
-        ]
-        response = text_analytics.detect_language(documents=documents)
-
-        for document in response.documents:
-            print("Document Id: ", document.id, ", Language: ",
-                  document.detected_languages[0].name)
-
-    except Exception as err:
-        print("Encountered exception. {}".format(err))
-
-
 def key_phrases(subscription_key,text):
-    """Key-phrases.
-    Returns the key talking points in several text examples.
-    """
     credentials = CognitiveServicesCredentials(subscription_key)
     text_analytics_url = "https://{}.api.cognitive.microsoft.com".format(
         TEXTANALYTICS_LOCATION)
@@ -73,9 +43,6 @@ def key_phrases(subscription_key,text):
 
 
 def sentiment(subscription_key):
-    """Sentiment.
-    Scores close to 1 indicate positive sentiment, while scores close to 0 indicate negative sentiment.
-    """
     credentials = CognitiveServicesCredentials(subscription_key)
     text_analytics_url = "https://{}.api.cognitive.microsoft.com".format(
         TEXTANALYTICS_LOCATION)
@@ -140,8 +107,9 @@ if __name__ == "__main__":
 
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
 
-    keys = key_phrases(SUBSCRIPTION_KEY_ENV_NAME,"hey akshat")
-    ent = entity_extraction(SUBSCRIPTION_KEY_ENV_NAME,"hey akshat what up?")
+    keys = key_phrases(SUBSCRIPTION_KEY_ENV_NAME,"Someone get his blood pressure lowered.")
+    ent = entity_extraction(SUBSCRIPTION_KEY_ENV_NAME,"")
     #print(keys)
     print('input text: ',keys[0])
     print('phrases: ',keys[1])
+    print(ent)

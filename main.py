@@ -1,14 +1,17 @@
 import analyze as az
-import speech_trial as stt
-SUBSCRIPTION_KEY_ENV_NAME = "bc20ced3c3014badbf34d1799e28f2a2"
+#import speech_trial as stt
 
-text =  stt.rec()
-print(text)
+def get_text():
+    SUBSCRIPTION_KEY_ENV_NAME = "e0a4ec68847644849409dce0a433d785"
 
-keys = az.key_phrases(SUBSCRIPTION_KEY_ENV_NAME,text)
-    #print(keys)
+   # text =  stt.rec()
+    text = 'akshat is a faggot'
+    print(text)
 
-#ent = az.entity_extraction(SUBSCRIPTION_KEY_ENV_NAME,text)
-#print(ent)
-print('input text: ',keys[0])
-print('phrases: ',keys[1])
+    keys = az.key_phrases(SUBSCRIPTION_KEY_ENV_NAME,text)
+    ent = az.entity_extraction(SUBSCRIPTION_KEY_ENV_NAME,text)
+
+    #print(ent)
+    #print('input text: ',keys[0])
+    #print('phrases: ',keys[1])
+    return [keys,ent]

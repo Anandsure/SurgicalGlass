@@ -5,6 +5,7 @@ from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 import subprocess
+import main as m
 
 RST = 0
 
@@ -26,45 +27,21 @@ x = 0
 font = ImageFont.load_default()
 
 while True:
+    [keys,ent] = m.get_text()
+    phrases = keys[1]
+    print(phrases)
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
     # Write two lines of text.
     disp.clear()
     disp.display()
-    draw.text((x, top),       "OLED Interfacing " ,  font=font, fill=255)
-    draw.text((x, top+8),     "Circuit Digest", font=font, fill=255)
+    draw.text((x, top),       phrases ,  font=font, fill=255)
+    '''draw.text((x, top+8),     "Circuit Digest", font=font, fill=255)
     draw.text((x, top+16),    "For more Videos",  font=font, fill=255)
     draw.text((x, top+25),    "Visit at",  font=font, fill=255)
-    draw.text((x, top+34),    "www.circuitdigest.com",  font=font, fill=255)
+    draw.text((x, top+34),    "www.circuitdigest.com",  font=font, fill=255)'''
 
     # Display image.
     disp.image(image1)
     disp.display()
     time.sleep(2)
-
-    '''if disp.height == 64:
-        image = Image.open('img1.png').convert('1')
-    else:
-        image = Image.open('img1.png').convert('1')
-
-    disp.image(image)
-    disp.display()
-    time.sleep(2)
-
-    if disp.height == 64:
-        image = Image.open('img3.jpg').convert('1')
-    else:
-        image = Image.open('img3.jpg').convert('1')
-
-    disp.image(image)
-    disp.display()
-    time.sleep(2)
-
-    if disp.height == 64:
-        image = Image.open('img4.jpg').convert('1')
-    else:
-        image = Image.open('img4.jpg').convert('1')
-
-    disp.image(image)
-    disp.display()
-    time.sleep(2)'''
