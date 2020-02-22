@@ -35,7 +35,7 @@ while True:
     # Write two lines of text.
     disp.clear()
     disp.display()
-    draw.text((x, top),       phrases ,  font=font, fill=255)
+    draw.text((x, top+16),       phrases ,  font=font, fill=255)
     '''draw.text((x, top+8),     "Circuit Digest", font=font, fill=255)
     draw.text((x, top+16),    "For more Videos",  font=font, fill=255)
     draw.text((x, top+25),    "Visit at",  font=font, fill=255)

@@ -1,6 +1,7 @@
 import analyze as az
 #import speech_trial as stt
 
+
 def get_text():
     SUBSCRIPTION_KEY_ENV_NAME = "e0a4ec68847644849409dce0a433d785"
 
