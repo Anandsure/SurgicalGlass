@@ -25,21 +25,39 @@ top = padding
 bottom = height-padding
 x = 0
 font = ImageFont.load_default()
+import requests 
+  
+# api-endpoint 
+URL = "https://surgical-glass.herokuapp.com/api/v1/"
+
+r = requests.get(url = URL) 
+  
+data = r.json()
+#print(data['data'])
+
+doctor = data['data'][0]['doctor']
+print('\nThe doctor is: ',doctor)
+imp_pts = data['data'][0]['important_points']
+meds = data['data'][0]['medications']
+log = data['data'][0]['log']
+print('\nLOG: ',log)
+print('\nmedications for this: ',meds)
+print('\nThe important points are: ',imp_pts)
 
 while True:
-    [keys,ent] = m.get_text()
-    phrases = keys[1]
-    print('key phrases: ', phrases)
+    #[keys,ent] = m.get_text()
+    #phrases = keys[1]
+    #print('key phrases: ', phrases)
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
     # Write two lines of text.
     disp.clear()
     disp.display()
-    draw.text((x, top+16),       phrases ,  font=font, fill=255)
-    '''draw.text((x, top+8),     "Circuit Digest", font=font, fill=255)
-    draw.text((x, top+16),    "For more Videos",  font=font, fill=255)
-    draw.text((x, top+25),    "Visit at",  font=font, fill=255)
-    draw.text((x, top+34),    "www.circuitdigest.com",  font=font, fill=255)'''
+    draw.text((x, top),       log ,  font=font, fill=255)
+    draw.text((x, top+8),     meds, font=font, fill=255)
+    #draw.text((x, top+16),    "For more Videos",  font=font, fill=255)
+    #draw.text((x, top+25),    "Visit at",  font=font, fill=255)
+    #draw.text((x, top+34),    "www.circuitdigest.com",  font=font, fill=255)'''
 
     # Display image.
     disp.image(image1)
