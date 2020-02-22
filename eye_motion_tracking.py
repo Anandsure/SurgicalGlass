@@ -42,20 +42,20 @@ while True:
         #print(x,y,w,h)
         print(x1)
         if y < 225 or x < 300:
-            #print('Looking left')
+            print('Looking left')
             f = 1
             x1.append(1)
         elif y > 245 or x > 480:
-            #print('Looking Right')
+            print('Looking Right')
             f = 1
             x1.append(1)
         else:
-            #rint('Looking Straight')
+            print('Looking Straight')
             f = -1
             x1.append(-1)
         
         extract=''
-        for i in text:
+        '''for i in text:
             if i != '\n':
                 extract+=i
             else:
@@ -65,7 +65,7 @@ while True:
                     if phrases:
                         print(phrases[1])
                         extract=''
-                        x1.remove(x1[0])
+                        x1.remove(x1[0])'''
         if len(x1)==2:
             x1.remove(x1[0])
         
