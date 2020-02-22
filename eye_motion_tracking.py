@@ -12,6 +12,8 @@ patient has a weak spine and is anemic.
 '''
 extract=''
 
+phrases = ['BP less than 80mmHg', 'Busted vein right arm', 'Uncon. Anesthesia levels','anemic and weak spine']
+
 cap = cv2.VideoCapture("eye_recording.mp4")
 #cap = cv2.VideoCapture(0)
 x1=[]
@@ -29,7 +31,8 @@ for i in text:
                 break
             break
 '''
-
+print('ON DISPLAY: ',phrases[0])
+i=0
 while True:
     
     ret, frame = cap.read()
@@ -55,32 +58,28 @@ while True:
         #print(x,y,w,h)
         #print(x1)
         if y < 225 or x < 300:
-            print('Looking left')
-            f = 1
+            #print('Looking left')
             x1.append(1)
         elif y > 245 or x > 480:
-            print('Looking Right')
-            f = 1
+            #print('Looking Right')
             x1.append(1)
         else:
-            print('Looking Straight')
-            f = -1
+            #print('Looking Straight')
             x1.append(-1)
         
         extract=''
-        '''for i in text:
-            if i != '\n':
-                extract+=i
+        if x1==[1,-1]:
+            f = 1
+            print('Is Focused on the operation')
+        if f == 1 and x1 == [-1,1]:
+            if i < 3:
+                i+=1
             else:
-                if x1==[1,-1] or x1== [-1,1]:
-                #display
-                    phrases = az.key_phrases(SUBSCRIPTION_KEY_ENV_NAME,extract)
-                    if phrases:
-                        print(phrases[1])
-                        extract=''
-                        x1.remove(x1[0])
+                i=i-4
+            x = phrases[i]
+            print('ON DISPLAY: ',x,' Looked At the text') 
         if len(x1)==2:
-            x1.remove(x1[0])'''
+            x1.remove(x1[0])
         
 
 
