@@ -11,7 +11,4 @@ def get_text():
     keys = az.key_phrases(SUBSCRIPTION_KEY_ENV_NAME,text)
     ent = az.entity_extraction(SUBSCRIPTION_KEY_ENV_NAME,text)
 
-    #print(ent)
-    #print('input text: ',keys[0])
-    #print('phrases: ',keys[1])
     return [keys,ent]

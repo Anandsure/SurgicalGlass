@@ -1,10 +1,24 @@
 import cv2
 import numpy as np
+import analyze as az
 
-cap = cv2.VideoCapture("eye_recording.flv")
+SUBSCRIPTION_KEY_ENV_NAME = "e0a4ec68847644849409dce0a433d785"
+f=0
+
+text = '''
+Keep blood pressure lower than 80 mmHg.
+patient has a busted vain in the right arm.
+have to ensure unconsious anesthesia levels.
+patient has a weak spine and is anemic.
+'''
+extract=''
+
+cap = cv2.VideoCapture("eye_recording.mp4")
 #cap = cv2.VideoCapture(0)
+x1=[]
 
 while True:
+    
     ret, frame = cap.read()
     if ret is False:
         break
@@ -25,13 +39,36 @@ while True:
         cv2.rectangle(roi, (x, y), (x + w, y + h), (255, 0, 0), 2)
         cv2.line(roi, (x + int(w/2), 0), (x + int(w/2), rows), (0, 255, 0), 2)
         cv2.line(roi, (0, y + int(h/2)), (cols, y + int(h/2)), (0, 255, 0), 2)
-        print(x,y,w,h)
+        #print(x,y,w,h)
+        print(x1)
         if y < 225 or x < 300:
-            print('Looking left')
+            #print('Looking left')
+            f = 1
+            x1.append(1)
         elif y > 245 or x > 480:
-            print('Looking Right')
+            #print('Looking Right')
+            f = 1
+            x1.append(1)
         else:
-            print('Looking Straight')
+            #rint('Looking Straight')
+            f = -1
+            x1.append(-1)
+        
+        extract=''
+        for i in text:
+            if i != '\n':
+                extract+=i
+            else:
+                if x1==[1,-1] or x1== [-1,1]:
+                #display
+                    phrases = az.key_phrases(SUBSCRIPTION_KEY_ENV_NAME,extract)
+                    if phrases:
+                        print(phrases[1])
+                        extract=''
+                        x1.remove(x1[0])
+        if len(x1)==2:
+            x1.remove(x1[0])
+        
 
 
         break
@@ -44,3 +81,5 @@ while True:
         break
 
 cv2.destroyAllWindows()
+if __name__ == '__main__':
+    capture()
