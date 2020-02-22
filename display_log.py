@@ -30,12 +30,12 @@ while True:
     [keys,ent] = m.get_text()
     phrases = keys[1]
     print('key phrases: ', phrases)
-    draw.rectangle((0,0,width,height), outline=0, fill=0)
+    draw.rectangle((0,0,width,height), outline=0, fill=255)
 
     # Write two lines of text.
     disp.clear()
     disp.display()
-    draw.text((x, top+16),       phrases ,  font=font, fill=255)
+    draw.text((x, top+16),       phrases ,  font=font, fill=0)
     '''draw.text((x, top+8),     "Circuit Digest", font=font, fill=255)
     draw.text((x, top+16),    "For more Videos",  font=font, fill=255)
     draw.text((x, top+25),    "Visit at",  font=font, fill=255)
