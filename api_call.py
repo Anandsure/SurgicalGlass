@@ -9,8 +9,10 @@ data = r.json()
 #print(data['data'])
 
 doctor = data['data'][0]['doctor']
-print('the doctor is: ',doctor)
+print('\nThe doctor is: ',doctor)
 imp_pts = data['data'][0]['important_points']
-meds = imp_pts = data['data'][0]['medications']
-print('medications for this: ',meds)
-print('The important points are: ',imp_pts)
+meds = data['data'][0]['medications']
+log = data['data'][0]['log']
+print('\nLOG: ',log)
+print('\nmedications for this: ',meds)
+print('\nThe important points are: ',imp_pts)
