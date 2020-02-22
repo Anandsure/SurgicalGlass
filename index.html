@@ -21,26 +21,46 @@
         </div>
         <div class="col-12">
             <div class="row p-2">
-                <img src="img/search.png" class="img-fluid" style="max-height: 100px;">
+                <img src="img/search.png" class="img-fluid" style="max-height: 80px;">
             </div>
         </div>
         <div class="col-12">
-            <div class="row p-3">
-                <img src="img/1.png" class="img-fluid my-1" style="border-radius: 20px;border: 2px solid black;max-height: 300px;">
-                <img src="img/2.png" class="img-fluid my-1" style="border-radius: 20px;border: 2px solid black;max-height: 300px;">
+            <div class="row justify-content-center">
+                <img src="img/1.png" class="img-fluid my-1"
+                    style="border-radius: 20px;border: 2px solid black;max-height: 300px;">
+                <img src="img/2.png" class="img-fluid my-1"
+                    style="border-radius: 20px;border: 2px solid black;max-height: 300px;">
             </div>
         </div>
 
         <footer class="footer text-center" style="border-top: 1px solid black;border-bottom: 1px solid black;">
             <div class="row justify-content-center mt-2 pb-2">
-                <img src="img/settings.png" height="50px" width="50px" class="mx-3"
-                    style="border-radius: 50%;background-color: lightgray;padding: 10px">
-                <img src="img/home.png" height="50px" width="50px" class="mx-3"
-                    style="border-radius: 50%;background-color: lightgray;padding: 10px">
-                <img src="img/note.png" height="50px" width="50px" class="mx-3"
-                    style="border-radius: 50%;background-color: lightgray;padding: 10px">
+                <a data-toggle="modal" href="#myModal"><img src="img/settings.png" height="50px" width="50px"
+                        class="mx-3" style="border-radius: 50%;background-color: lightgray;padding: 10px"></a>
+                <a href="index.html"><img src="img/home.png" height="50px" width="50px" class="mx-3"
+                        style="border-radius: 50%;background-color: lightgray;padding: 10px"></a>
+                <a data-toggle="modal" href="#myModal"><img src="img/note.png" height="50px" width="50px" class="mx-3"
+                        style="border-radius: 50%;background-color: lightgray;padding: 10px"></a>
             </div>
         </footer>
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Under Construction!</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center">Coming Soon..</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     </div>
 
