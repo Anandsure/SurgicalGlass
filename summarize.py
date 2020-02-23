@@ -14,8 +14,9 @@ def get_text():
     keys = az.key_phrases(SUBSCRIPTION_KEY_ENV_NAME,text)
     ent = az.entity_extraction(SUBSCRIPTION_KEY_ENV_NAME,text)
 
-    print(keys[1])
+    #print(keys[1])
 
     return [keys,ent]
 
-get_text()
+if __name__ == '__main__':
+    get_text()
